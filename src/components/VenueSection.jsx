@@ -88,7 +88,7 @@ END:VCALENDAR`;
           {/* Heading moved inside Arch */}
           <div className="text-center mb-6 relative z-10 mt-2">
             <p className="font-inter text-[10px] uppercase tracking-[0.35em] text-[#6B8E6B] mb-2">Location</p>
-            <h2 className="font-cormorant text-3xl font-semibold text-[#1F2937]">Venue</h2>
+            <h2 className="font-cormorant text-3xl font-semibold text-[var(--text-dark)]">Venue</h2>
           </div>
           
           {/* Map embed */}
@@ -115,8 +115,8 @@ END:VCALENDAR`;
               transition={{ delay: 0.2, duration: 0.6 }}
               className="text-center mb-5"
             >
-              <h3 className="font-cormorant font-semibold text-xl text-[#1F2937] mb-1">{weddingData.venue.name}</h3>
-              <p className="font-inter text-sm text-[#718096]">
+              <h3 className="font-cormorant font-semibold text-xl text-[var(--text-dark)] mb-1">{weddingData.venue.name}</h3>
+              <p className="font-inter text-sm text-[var(--text-muted)]">
                 {weddingData.venue.addressEn[0]}<br />
                 {weddingData.venue.addressEn[1]}
               </p>
@@ -149,13 +149,13 @@ END:VCALENDAR`;
                         target="_blank" 
                         rel="noopener noreferrer" 
                         onClick={() => setShowCalendarOpts(false)}
-                        className="p-3 text-sm text-center text-[#1F2937] border-b border-black/5 hover:bg-black/5 transition border-t-0 font-inter"
+                        className="p-3 text-sm text-center text-[var(--text-dark)] border-b border-black/5 hover:bg-black/5 transition border-t-0 font-inter"
                       >
                         Google Calendar
                       </a>
                       <button 
                         onClick={downloadICS} 
-                        className="p-3 text-sm text-center text-[#1F2937] hover:bg-black/5 transition bg-transparent border-0 font-inter cursor-pointer"
+                        className="p-3 text-sm text-center text-[var(--text-dark)] hover:bg-black/5 transition bg-transparent border-0 font-inter cursor-pointer"
                       >
                         Apple / Outlook
                       </button>
@@ -195,3 +195,4 @@ END:VCALENDAR`;
     </section>
   );
 }
+
