@@ -46,13 +46,13 @@ const FamilyCard = ({ side, delay }) => {
 
         {/* Father */}
         <div className="flex items-center justify-center gap-2 mb-1">
-          <span className="font-inter text-[10px] text-[var(--sage)] opacity-60">S/o</span>
+          <span className="font-inter text-[10px] text-[var(--dusty-blue)] opacity-60">S/o</span>
           <p className="font-cormorant text-base text-[var(--text-dark)] font-medium">{data.father}</p>
         </div>
 
         {/* Mother */}
         <div className="flex items-center justify-center gap-2">
-          <span className="font-inter text-[10px] text-[var(--sage)] opacity-60">&</span>
+          <span className="font-inter text-[10px] text-[var(--dusty-blue)] opacity-60">&</span>
           <p className="font-cormorant text-base text-[var(--text-dark)] font-medium">{data.mother}</p>
         </div>
       </div>
@@ -126,3 +126,4 @@ export default function FamilySection() {
     </section>
   );
 }
+

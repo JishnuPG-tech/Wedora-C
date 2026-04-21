@@ -49,20 +49,20 @@ function LinkGenerator() {
 
   return (
     <div className="mb-6 p-4 rounded-xl border border-[rgba(107,142,107,0.2)]" style={{ background: 'rgba(255,255,255,0.6)' }}>
-      <p className="font-inter text-[10px] uppercase tracking-[0.3em] text-[var(--sage-dark)] mb-3 font-semibold flex items-center gap-1.5">
+      <p className="font-inter text-[10px] uppercase tracking-[0.3em] text-[var(--dusty-dark)] mb-3 font-semibold flex items-center gap-1.5">
         <Link2 size={12} strokeWidth={1.5} /> Invite Link Generator
       </p>
       <div className="flex gap-2 mb-3">
         <input type="text" value={name} onChange={e => setName(e.target.value)} placeholder="Guest name..."
-          className="flex-1 px-3 py-2 text-sm rounded-lg border border-[var(--sage-dark)]/25 bg-white/70 text-[var(--text-dark)] font-inter outline-none focus:border-[var(--sage-dark)]"
+          className="flex-1 px-3 py-2 text-sm rounded-lg border border-[var(--dusty-dark)]/25 bg-white/70 text-[var(--text-dark)] font-inter outline-none focus:border-[var(--dusty-dark)]"
           onKeyDown={e => e.key === 'Enter' && generate()} />
         <button onClick={generate} className="btn-primary px-4 py-2 text-xs">Generate</button>
       </div>
       {generated && (
-        <div className="p-3 rounded-lg border border-[var(--sage-dark)]/15" style={{ background: 'rgba(248,247,244,0.9)' }}>
+        <div className="p-3 rounded-lg border border-[var(--dusty-dark)]/15" style={{ background: 'rgba(248,247,244,0.9)' }}>
           <p className="font-inter text-[9px] text-[var(--text-muted)] mb-2 break-all">{generated}</p>
           <div className="flex gap-2">
-            <button onClick={copy} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-inter border hover:opacity-80 transition" style={{ background: 'rgba(107,142,107,0.1)', color: 'var(--sage-dark)', borderColor: 'rgba(107,142,107,0.2)' }}>
+            <button onClick={copy} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-inter border hover:opacity-80 transition" style={{ background: 'rgba(107,142,107,0.1)', color: 'var(--dusty-dark)', borderColor: 'rgba(107,142,107,0.2)' }}>
               {copied ? <Check size={10}/> : <Copy size={10}/>} {copied ? 'Copied!' : 'Copy'}
             </button>
             <button onClick={sendWhatsapp} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[10px] font-inter text-[#128C7E] border border-[#25D366]/20 hover:opacity-80 transition" style={{ background: 'rgba(37,211,102,0.1)' }}>
@@ -101,7 +101,7 @@ export default function AdminDashboard() {
     return (
       <div className="min-h-screen flex items-center justify-center px-6" style={{ background: 'var(--bg-main, #F8F7F4)' }}>
         <div className="glass-card rounded-2xl p-8 w-full max-w-sm text-center">
-          <Lock size={28} className="mx-auto mb-4" style={{ color: 'var(--sage-dark)' }} strokeWidth={1.2} />
+          <Lock size={28} className="mx-auto mb-4" style={{ color: 'var(--dusty-dark)' }} strokeWidth={1.2} />
           <h2 className="font-cormorant text-2xl font-semibold mb-6" style={{ color: 'var(--text-dark)' }}>Admin Access</h2>
           <input type="password" value={pw} onChange={e => setPw(e.target.value)} onKeyDown={e => e.key === 'Enter' && login()}
             placeholder="Enter password" className="w-full px-4 py-3 rounded-xl border bg-white/70 font-inter text-sm outline-none mb-3" style={{ borderColor: 'rgba(107,142,107,0.3)', color: 'var(--text-dark)' }} />
@@ -117,7 +117,7 @@ export default function AdminDashboard() {
       <div className="max-w-2xl mx-auto">
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
           <h1 className="font-cormorant italic text-3xl text-center mb-2" style={{ color: 'var(--text-dark)' }}>Admin Dashboard</h1>
-          <p className="font-inter text-[10px] uppercase tracking-[0.3em] text-center mb-6" style={{ color: 'var(--sage-dark)' }}>
+          <p className="font-inter text-[10px] uppercase tracking-[0.3em] text-center mb-6" style={{ color: 'var(--dusty-dark)' }}>
             {weddingData.couple.groom} &amp; {weddingData.couple.bride} · {weddingData.dates.headerDisplay}
           </p>
 
@@ -130,7 +130,7 @@ export default function AdminDashboard() {
               { icon: <UtensilsCrossed size={18} strokeWidth={1.5}/>, label: 'Total Guests', value: totalGuests },
             ].map((s, i) => (
               <div key={i} className="glass-card rounded-xl p-3 text-center">
-                <div className="flex justify-center mb-1" style={{ color: 'var(--sage-dark)' }}>{s.icon}</div>
+                <div className="flex justify-center mb-1" style={{ color: 'var(--dusty-dark)' }}>{s.icon}</div>
                 <p className="font-cormorant text-2xl font-bold" style={{ color: 'var(--text-dark)' }}>{s.value}</p>
                 <p className="font-inter text-[8px] uppercase tracking-wider opacity-70" style={{ color: 'var(--text-muted)' }}>{s.label}</p>
               </div>
@@ -146,7 +146,7 @@ export default function AdminDashboard() {
               {['all','yes','no'].map(f => (
                 <button key={f} onClick={() => setFilter(f)}
                   className={`px-3 py-1 rounded-full text-[9px] font-inter uppercase tracking-wider transition border ${filter === f ? 'text-white' : 'bg-white/60 opacity-70'}`}
-                  style={filter === f ? { background: 'var(--sage-dark)', borderColor: 'var(--sage-dark)' } : { borderColor: 'rgba(107,142,107,0.2)', color: 'var(--text-muted)' }}>
+                  style={filter === f ? { background: 'var(--dusty-dark)', borderColor: 'var(--dusty-dark)' } : { borderColor: 'rgba(107,142,107,0.2)', color: 'var(--text-muted)' }}>
                   {f === 'all' ? 'All' : f === 'yes' ? 'Attending' : 'Not Coming'}
                 </button>
               ))}
@@ -167,7 +167,7 @@ export default function AdminDashboard() {
                 <thead>
                   <tr className="border-b" style={{ borderColor: 'rgba(107,142,107,0.12)', background: 'rgba(107,142,107,0.05)' }}>
                     {['Name','Attending','Guests','Meal','Message','Date'].map(h => (
-                      <th key={h} className="px-3 py-2.5 font-inter text-[8px] uppercase tracking-[0.2em] font-semibold whitespace-nowrap" style={{ color: 'var(--sage-dark)' }}>{h}</th>
+                      <th key={h} className="px-3 py-2.5 font-inter text-[8px] uppercase tracking-[0.2em] font-semibold whitespace-nowrap" style={{ color: 'var(--dusty-dark)' }}>{h}</th>
                     ))}
                   </tr>
                 </thead>
@@ -199,3 +199,4 @@ export default function AdminDashboard() {
     </div>
   );
 }
+

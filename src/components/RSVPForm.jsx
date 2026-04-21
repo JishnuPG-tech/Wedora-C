@@ -45,7 +45,7 @@ function GuestCounter({ value, onChange }) {
   return (
     <div className="flex items-center justify-center gap-4">
       <button type="button" onClick={() => onChange(Math.max(1, value - 1))} disabled={value <= 1}
-        className="w-9 h-9 rounded-full border border-[var(--sage-dark)]/30 flex items-center justify-center text-[var(--sage-dark)] hover:bg-[var(--sage-dark)]/10 disabled:opacity-30 disabled:cursor-not-allowed transition active:scale-95">
+        className="w-9 h-9 rounded-full border border-[var(--dusty-dark)]/30 flex items-center justify-center text-[var(--dusty-dark)] hover:bg-[var(--dusty-dark)]/10 disabled:opacity-30 disabled:cursor-not-allowed transition active:scale-95">
         <Minus size={14} strokeWidth={2} />
       </button>
       <div className="text-center min-w-[60px]">
@@ -53,7 +53,7 @@ function GuestCounter({ value, onChange }) {
         <p className="font-inter text-[9px] uppercase tracking-[0.2em] text-[var(--text-muted)] mt-0.5">{value === 1 ? 'Guest' : 'Guests'}</p>
       </div>
       <button type="button" onClick={() => onChange(Math.min(8, value + 1))} disabled={value >= 8}
-        className="w-9 h-9 rounded-full border border-[var(--sage-dark)]/30 flex items-center justify-center text-[var(--sage-dark)] hover:bg-[var(--sage-dark)]/10 disabled:opacity-30 disabled:cursor-not-allowed transition active:scale-95">
+        className="w-9 h-9 rounded-full border border-[var(--dusty-dark)]/30 flex items-center justify-center text-[var(--dusty-dark)] hover:bg-[var(--dusty-dark)]/10 disabled:opacity-30 disabled:cursor-not-allowed transition active:scale-95">
         <Plus size={14} strokeWidth={2} />
       </button>
     </div>
@@ -97,12 +97,12 @@ export default function RSVPForm() {
     <section className="scroll-section flex items-center justify-center bg-transparent px-5 py-10">
       <div className="w-full max-w-sm mx-auto">
         <motion.div ref={ref} initial={{ opacity: 0, y: 18 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="text-center mb-6">
-          <p className="font-inter text-[10px] uppercase tracking-[0.4em] text-[var(--sage-dark)] mb-2 opacity-80">Will you join us?</p>
+          <p className="font-inter text-[10px] uppercase tracking-[0.4em] text-[var(--dusty-dark)] mb-2 opacity-80">Will you join us?</p>
           <h2 className="font-cormorant italic text-3xl font-medium text-[var(--text-dark)]">RSVP</h2>
           {liveCount !== null && (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex items-center justify-center gap-1.5 mt-2">
-              <Users size={11} className="text-[var(--sage-dark)]" strokeWidth={1.5} />
-              <p className="font-inter text-[9px] text-[var(--sage-dark)] opacity-70">{liveCount} guests attending so far</p>
+              <Users size={11} className="text-[var(--dusty-dark)]" strokeWidth={1.5} />
+              <p className="font-inter text-[9px] text-[var(--dusty-dark)] opacity-70">{liveCount} guests attending so far</p>
             </motion.div>
           )}
         </motion.div>
@@ -113,7 +113,7 @@ export default function RSVPForm() {
             {status === 'success' ? (
               <motion.div key="success" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
                 <div className="flex justify-center mb-3">
-                  {form.attending ? <Check size={40} className="text-[var(--sage-dark)]" strokeWidth={1} /> : <Mail size={40} className="text-[var(--gold)]" strokeWidth={1} />}
+                  {form.attending ? <Check size={40} className="text-[var(--dusty-dark)]" strokeWidth={1} /> : <Mail size={40} className="text-[var(--gold)]" strokeWidth={1} />}
                 </div>
                 <p className="font-cormorant italic text-xl text-[var(--text-dark)] mb-2">{form.attending ? 'See you there!' : 'Thank you for letting us know'}</p>
                 <p className="font-inter text-xs text-[var(--text-muted)] opacity-80">{form.attending ? `We can't wait to celebrate with you, ${form.name.split(' ')[0]}!` : 'You will be missed, but we understand.'}</p>
@@ -121,16 +121,16 @@ export default function RSVPForm() {
             ) : (
               <motion.form key="form" onSubmit={submit} className="space-y-5">
                 <div>
-                  <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--sage-dark)] block mb-1.5">Your Name</label>
+                  <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--dusty-dark)] block mb-1.5">Your Name</label>
                   <input value={form.name} onChange={e => set('name', e.target.value)} required placeholder="Full name"
-                    className="w-full px-4 py-3 rounded-xl border border-[var(--sage-dark)]/20 bg-white/60 text-[var(--text-dark)] font-inter text-sm outline-none focus:border-[var(--sage-dark)] transition" />
+                    className="w-full px-4 py-3 rounded-xl border border-[var(--dusty-dark)]/20 bg-white/60 text-[var(--text-dark)] font-inter text-sm outline-none focus:border-[var(--dusty-dark)] transition" />
                 </div>
                 <div>
-                  <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--sage-dark)] block mb-2">Will you attend?</label>
+                  <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--dusty-dark)] block mb-2">Will you attend?</label>
                   <div className="grid grid-cols-2 gap-2">
                     {[{ value: true, label: 'Joyfully Yes', icon: <Check size={13} strokeWidth={2}/> }, { value: false, label: 'Regretfully No', icon: <X size={13} strokeWidth={2}/> }].map(opt => (
                       <button key={String(opt.value)} type="button" onClick={() => set('attending', opt.value)}
-                        className={`py-2.5 rounded-xl text-sm font-inter font-medium border transition flex items-center justify-center gap-1.5 ${form.attending === opt.value ? 'bg-[var(--sage-dark)] text-white border-[var(--sage-dark)]' : 'bg-white/60 text-[var(--text-muted)] border-[var(--sage-dark)]/20 hover:border-[var(--sage-dark)]'}`}>
+                        className={`py-2.5 rounded-xl text-sm font-inter font-medium border transition flex items-center justify-center gap-1.5 ${form.attending === opt.value ? 'bg-[var(--dusty-dark)] text-white border-[var(--dusty-dark)]' : 'bg-white/60 text-[var(--text-muted)] border-[var(--dusty-dark)]/20 hover:border-[var(--dusty-dark)]'}`}>
                         {opt.icon}{opt.label}
                       </button>
                     ))}
@@ -140,11 +140,11 @@ export default function RSVPForm() {
                   {form.attending && (
                     <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="space-y-5 overflow-hidden">
                       <div>
-                        <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--sage-dark)] block mb-3 text-center">Number of Guests <span className="opacity-50 normal-case">(max 8)</span></label>
+                        <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--dusty-dark)] block mb-3 text-center">Number of Guests <span className="opacity-50 normal-case">(max 8)</span></label>
                         <GuestCounter value={form.guest_count} onChange={v => set('guest_count', v)} />
                       </div>
                       <div>
-                        <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--sage-dark)] block mb-2">Meal Preference</label>
+                        <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--dusty-dark)] block mb-2">Meal Preference</label>
                         <div className="grid grid-cols-2 gap-2">
                           {[{ value: 'Veg', icon: <Leaf size={13} strokeWidth={1.5}/>, label: 'Veg' }, { value: 'Non-Veg', icon: <Beef size={13} strokeWidth={1.5}/>, label: 'Non-Veg' }].map(m => (
                             <button key={m.value} type="button" onClick={() => set('meal_preference', form.meal_preference === m.value ? '' : m.value)}
@@ -158,9 +158,9 @@ export default function RSVPForm() {
                   )}
                 </AnimatePresence>
                 <div>
-                  <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--sage-dark)] block mb-1.5">A Blessing (optional)</label>
+                  <label className="font-inter text-[9px] uppercase tracking-[0.25em] text-[var(--dusty-dark)] block mb-1.5">A Blessing (optional)</label>
                   <textarea value={form.message} onChange={e => set('message', e.target.value)} rows={2} placeholder="Share your wishes..."
-                    className="w-full px-4 py-3 rounded-xl border border-[var(--sage-dark)]/20 bg-white/60 text-[var(--text-dark)] font-inter text-sm outline-none focus:border-[var(--sage-dark)] resize-none transition" />
+                    className="w-full px-4 py-3 rounded-xl border border-[var(--dusty-dark)]/20 bg-white/60 text-[var(--text-dark)] font-inter text-sm outline-none focus:border-[var(--dusty-dark)] resize-none transition" />
                 </div>
                 {status === 'error' && <p className="font-inter text-xs text-red-400 text-center">Something went wrong. Please try again.</p>}
                 <button type="submit" disabled={status === 'loading'} className="btn-primary w-full disabled:opacity-60 flex items-center justify-center gap-2">
@@ -200,4 +200,5 @@ export default function RSVPForm() {
     </section>
   );
 }
+
 
