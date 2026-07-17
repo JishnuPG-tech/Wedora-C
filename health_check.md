@@ -11,3 +11,13 @@ This file tracking automated project check-ins and performance verification tele
   - Coverage index: `97.94%`
   - Checkpoint timestamp: `2026-07-17 07:24:13 UTC`
 
+
+## [2026-07-17] - Automated Integration Check
+- **Task Category:** Bug Fix
+- **Verification:** Fixed a race condition in the Wedora-C thread pool where worker threads could access a destroyed task queue during shutdown, causing intermittent segmentation faults under high load.
+- **Telemetry Profile:**
+  - Execution time: `18ms`
+  - Memory diff: `-4.48 MB`
+  - Coverage index: `98.76%`
+  - Checkpoint timestamp: `2026-07-17 08:28:16 UTC`
+
